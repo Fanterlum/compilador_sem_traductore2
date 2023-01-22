@@ -1,0 +1,32 @@
+amonos(
+! numero1 = 100;
+! numero2 = 0; 
+! resultado;
+ 
+resultado = numero1 + numero2;
+
+mostrar "la respuesta es: " resultado;
+
+si(resultado > 110)haz
+mostrar "el numero resultante exede la cantidad estipulada";
+solo
+sino(
+mostrar "el numero esta dentro de lo estipulado";
+
+);
+
+
+mientras numero1 < numero2 (
+//codigo//
+
+mientras numero1 < numero3 (
+numero1= numero1 + 1;
+
+);
+
+);
+
+
+
+
+)fuera
