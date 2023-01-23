@@ -103,8 +103,7 @@ namespace compilador1
                     token1 == ">=" |
                     token1 == "||" |
                     token1 == "&&" |
-                    token1 == "=" |
-                    token1 == "==" |
+
                     token1 == "!=" |
                     token1 == ";" |
                     token1 == "," |
@@ -132,8 +131,42 @@ namespace compilador1
                     variables = "";
 
                 }
-                else if (variables.Length > 0 && ( saber_espacio == " ")) 
+                else if (token1 == "=")
                 {
+
+
+                    if (saber_espacio == "=")
+                    {
+
+                        txtSalida.Text = txtSalida.Text + "==" + " " + "opIgualdad = 11\n";
+                        tokenllevado = dataLexemas.Rows.Add();
+                        dataLexemas.Rows[tokenllevado].Cells["Lexema"].Value = token1+"=";
+                        dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "11";
+                        token1 = "";
+                        gg = true;
+                        variables = "";
+                        inicioestado++;
+                        
+
+                    }
+                    else
+                    {
+                        txtSalida.Text = txtSalida.Text + "=" + " " + "= 18\n";
+                        tokenllevado = dataLexemas.Rows.Add();
+                        dataLexemas.Rows[tokenllevado].Cells["Lexema"].Value = token1;
+                        dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "18";
+
+                        token1 = "";
+                        gg = true;
+                        variables = "";
+                    }
+
+
+                }
+                else if (variables.Length > 0 && ( saber_espacio == " "))
+                {
+
+
                     if (Regex.IsMatch(token1, @"^[a-zA-Z][a-zA-Z0-9]+") == true) //si es variable entramos
                     {
                         txtSalida.Text = txtSalida.Text + token1 + " " + "Identificador = 0\n";
@@ -171,18 +204,15 @@ namespace compilador1
                     }
 
                 }
-                /*else
-                {
-                    
-                }*/
-            }   
-
- 
                 
-            
+            }
 
-            
-            
+
+
+
+
+
+
         }
 
 
@@ -239,12 +269,6 @@ namespace compilador1
                     txtSalida.Text = txtSalida.Text + "!" + " " + "opNot = 10\n";
                     break;
 
-                case "=":
-                    txtSalida.Text = txtSalida.Text + "=" + " " + "= 18\n";
-                    break;
-                case "==":
-                    txtSalida.Text = txtSalida.Text + "==" + " " + "opIgualdad = 11\n";
-                    break;
                 case "!=":
                     txtSalida.Text = txtSalida.Text + "!=" + " " + "opIgualdad = 11\n";
                     break;
@@ -360,18 +384,12 @@ namespace compilador1
                     dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "10";
                     break;
 
-                case "==":
-                    dataLexemas.Rows[tokenllevado].Cells["Lexema"].Value = lexema;
-                    dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "11";
-                    break;
+ 
                 case "!=":
                     dataLexemas.Rows[tokenllevado].Cells["Lexema"].Value = lexema;
                     dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "11";
                     break;
-                case "=":
-                    dataLexemas.Rows[tokenllevado].Cells["Lexema"].Value = lexema;
-                    dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "18";
-                    break;
+
                 case ";":
                     dataLexemas.Rows[tokenllevado].Cells["Lexema"].Value = lexema;
                     dataLexemas.Rows[tokenllevado].Cells["Token"].Value = "12";
