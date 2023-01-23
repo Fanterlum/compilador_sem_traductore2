@@ -465,10 +465,8 @@ namespace compilador1
 
             }
 
-
-
-           
         }
+
 
         private void CompilarButton_Click(object sender, EventArgs e)
         {
@@ -477,11 +475,6 @@ namespace compilador1
             compi(cadenatoken);    
             dataLexemas.Visible = true;
            
-
-
-
-
-
         }
         
         private void PictureBox6_Click(object sender, EventArgs e)
@@ -489,7 +482,6 @@ namespace compilador1
             OpenFileDialog abrir = new OpenFileDialog();
             StreamReader leer = new StreamReader("C:/Users/kevdc/Desktop/proyectos/compilador1/sintaxis.txt");
             codigos.Text = leer.ReadToEnd();
-
 
             leer.Close();
         }
@@ -503,11 +495,7 @@ namespace compilador1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
 
-            
-
-            
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -515,9 +503,9 @@ namespace compilador1
 
         }
 
+        
         private void PictureBox2_Click(object sender, EventArgs e)
-        {
-           
+        { 
                 
         }
 
