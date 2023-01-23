@@ -465,7 +465,7 @@ namespace compilador1
 
 
         }
-
+        
         private void PictureBox6_Click(object sender, EventArgs e)
         {
             OpenFileDialog abrir = new OpenFileDialog();
@@ -475,6 +475,7 @@ namespace compilador1
 
             leer.Close();
         }
+        
 
         private void PictureBox3_Click(object sender, EventArgs e)
         {
@@ -503,6 +504,16 @@ namespace compilador1
         }
 
         private void codigos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataLexemas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
